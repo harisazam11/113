@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "80144154287",
+    "project_id": "buitems-lost-found",
+    "storage_bucket": "buitems-lost-found.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80144154287:android:3e72a4b4fd43311d719e5a",
+        "android_client_info": {
+          "package_name": "com.example.buitems_lost_found"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMnpN26h2lK9x76_grXAnoMLus7CeUn2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
