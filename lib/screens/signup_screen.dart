@@ -103,6 +103,9 @@ class _SignupScreenState extends State<SignupScreen> {
         name: _name.text.trim(),
         email: _email.text,
         password: _pwd.text,
+        department: _department ?? '',
+        semester: _semester ?? '',
+        phone: _phone.text.trim(),
       );
       if (mounted) Navigator.pop(context);
     } catch (e) {

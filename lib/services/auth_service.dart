@@ -19,6 +19,9 @@ class AuthService {
     required String name,
     required String email,
     required String password,
+    required String department,
+    required String semester,
+    required String phone,
   }) async {
     if (!_isBuitemsEmail(email)) {
       throw FirebaseAuthException(
