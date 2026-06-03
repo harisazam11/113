@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 enum ItemType { lost, found }
-enum ItemStatus { active, returned, closed }
+enum ItemStatus { active, returned, closed, claimed }
 
 const List<String> kCategories = [
   'Electronics', 'ID Card', 'Books', 'Bags', 'Clothing',
