@@ -75,6 +75,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final _email = TextEditingController();
   final _pwd = TextEditingController();
   final _phone = TextEditingController();
+  final _customDepartment = TextEditingController();
   bool _loading = false;
   bool _obscurePwd = true;
   String? _department;
@@ -83,12 +84,26 @@ class _SignupScreenState extends State<SignupScreen> {
   static const List<String> _departments = [
     'Computer Science',
     'Software Engineering',
+    'Information Technology',
+    'Artificial Intelligence',
+    'Data Science',
+    'Cyber Security',
     'Electrical Engineering',
+    'Electronics Engineering',
     'Civil Engineering',
     'Mechanical Engineering',
     'Architecture',
     'Business Administration',
+    'Management Sciences',
+    'Accounting & Finance',
+    'Economics',
     'Pharmacy',
+    'Biotechnology',
+    'Mathematics',
+    'Physics',
+    'Chemistry',
+    'English',
+    'Education',
     'Other',
   ];
 
@@ -103,7 +118,9 @@ class _SignupScreenState extends State<SignupScreen> {
         name: _name.text.trim(),
         email: _email.text,
         password: _pwd.text,
-        department: _department ?? '',
+        department: _department == 'Other'
+          ? _customDepartment.text.trim()
+          : (_department ?? ''),
         semester: _semester ?? '',
         phone: _phone.text.trim(),
       );
@@ -130,6 +147,7 @@ class _SignupScreenState extends State<SignupScreen> {
     _email.dispose();
     _pwd.dispose();
     _phone.dispose();
+    _customDepartment.dispose();
     super.dispose();
   }
 
@@ -253,6 +271,17 @@ class _SignupScreenState extends State<SignupScreen> {
                 .toList(),
             onChanged: (v) => setState(() => _department = v),
           ),
+          if (_department == 'Other') ...[
+            const SizedBox(height: 14),
+            TextField(
+              controller: _customDepartment,
+              decoration: const InputDecoration(
+                labelText: 'Enter Department',
+                hintText: 'Type your department',
+                prefixIcon: Icon(Icons.edit_outlined, size: 20),
+              ),
+            ),
+          ],
           const SizedBox(height: 14),
           // Semester dropdown
           DropdownButtonFormField<String>(
