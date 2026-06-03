@@ -5,25 +5,34 @@ class ItemService {
   static final _col = FirebaseFirestore.instance.collection('items');
 
   static Stream<List<Item>> streamAll({
-    ItemType? type, String? category, String? query,
-  }) {
-    Query q = _col.orderBy('createdAt', descending: true);
-    if (type != null) q = q.where('type', isEqualTo: type.name);
-    if (category != null && category.isNotEmpty) {
-      q = q.where('category', isEqualTo: category);
-    }
-    return q.snapshots().map((s) {
-      var items = s.docs.map(Item.fromDoc).toList();
-      if (query != null && query.trim().isNotEmpty) {
-        final lower = query.toLowerCase();
-        items = items.where((i) =>
+  ItemType? type,
+  String? category,
+  String? query,
+}) {
+  Query q = _col; // ❌ remove orderBy first
+
+  if (type != null) {
+    q = q.where('type', isEqualTo: type.name);
+  }
+
+  if (category != null && category.isNotEmpty) {
+    q = q.where('category', isEqualTo: category);
+  }
+
+  return q.snapshots().map((s) {
+    var items = s.docs.map(Item.fromDoc).toList();
+
+    if (query != null && query.trim().isNotEmpty) {
+      final lower = query.toLowerCase();
+      items = items.where((i) =>
           i.title.toLowerCase().contains(lower) ||
           i.description.toLowerCase().contains(lower) ||
           i.location.toLowerCase().contains(lower)).toList();
-      }
-      return items;
-    });
-  }
+    }
+
+    return items;
+  });
+}
 
   static Stream<List<Item>> streamMine(String uid) =>
       _col.where('posterId', isEqualTo: uid)
