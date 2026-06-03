@@ -65,6 +65,9 @@ class AuthService {
         'uid': user.uid,
         'name': user.displayName ?? 'Student',
         'email': user.email ?? '',
+        'department': '',
+        'semester': '',
+        'phone': '',
         'createdAt': FieldValue.serverTimestamp(),
       });
     }
