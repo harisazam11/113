@@ -38,6 +38,10 @@ class AuthService {
       'name': name,
       'email': email.trim(),
       'createdAt': FieldValue.serverTimestamp(),
+      'department': department,
+      'semester': semester,
+      'phone': phone,
+      'role': 'student',
     });
   }
 
