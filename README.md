@@ -11,6 +11,17 @@ A mobile app for BUITEMS students to report and find lost items.
 - My Posts: edit, delete, change status (active / returned / closed)
 - Profile screen
 
+## 📱 Screen Preview
+
+|                                                    |                                                    |                                                    |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| ![Screen 1](assets/preview_screens/screen1.jpeg)   | ![Screen 2](assets/preview_screens/screen2.jpeg)   | ![Screen 3](assets/preview_screens/screen3.jpeg)   |
+| ![Screen 4](assets/preview_screens/screen4.jpeg)   | ![Screen 5](assets/preview_screens/screen5.jpeg)   | ![Screen 6](assets/preview_screens/screen6.jpeg)   |
+| ![Screen 7](assets/preview_screens/screen7.jpeg)   | ![Screen 8](assets/preview_screens/screen8.jpeg)   | ![Screen 9](assets/preview_screens/screen9.jpeg)   |
+| ![Screen 10](assets/preview_screens/screen10.jpeg) | ![Screen 11](assets/preview_screens/screen11.jpeg) | ![Screen 12](assets/preview_screens/screen12.jpeg) |
+| ![Screen 13](assets/preview_screens/screen13.jpeg) | ![Screen 14](assets/preview_screens/screen14.jpeg) |                                                    |
+
+
 ## Project Structure
 ```
 buitems_lost_found/
