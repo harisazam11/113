@@ -151,7 +151,7 @@ flutter run
 
 If available, you can watch the full app demo here:
 
-👉 [Watch Demo Video](#)
+👉 [Watch Demo Video](https://youtube.com/shorts/IOxEr7U7dHo?feature=share)
 
 ---
 ## APK Download
