@@ -57,32 +57,36 @@ class MyPostsScreen extends StatelessWidget {
       body: StreamBuilder<List<Item>>(
         stream: ItemService.streamMine(uid),
         builder: (context, snap) {
-          if (!snap.hasData){
-            return const Center(child: CircularProgressIndicator());}
-          final items = snap.data!;
-          if (items.isEmpty){
+          if (snap.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (snap.hasError) {
+            return const Center(child: Text('Something went wrong'));
+          }
+
+          final items = snap.data ?? [];
+
+          if (items.isEmpty) {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.post_add_rounded,
-                      size: 64, color: Colors.grey[300]),
+                      size: 64, color: Colors.grey),
                   const SizedBox(height: 12),
                   const Text(
                     'You have no posts yet',
                     style: TextStyle(
-                        color: Color(0xFF94A3B8), fontSize: 16),
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
-                    'Tap + to report a lost or found item',
-                    style: TextStyle(
-                        color: Color(0xFFCBD5E1), fontSize: 13),
+                      color: Color(0xFF94A3B8),
+                      fontSize: 16,
+                    ),
                   ),
                 ],
               ),
             );
           }
+
           return ListView.builder(
             padding: const EdgeInsets.fromLTRB(0, 12, 0, 100),
             itemCount: items.length,

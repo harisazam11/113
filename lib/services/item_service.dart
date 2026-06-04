@@ -34,14 +34,25 @@ class ItemService {
   });
 }
 
-  static Stream<List<Item>> streamMine(String uid) =>
-      _col.where('posterId', isEqualTo: uid)
-          .orderBy('createdAt', descending: true)
-          .snapshots()
-          .map((s) => s.docs.map(Item.fromDoc).toList());
+  static Stream<List<Item>> streamMine(String uid) {
+    return _col
+        .where('posterId', isEqualTo: uid)
+        .snapshots()
+        .map((snapshot) {
+          final items = snapshot.docs.map(Item.fromDoc).toList();
 
+          // safe sorting (NO Firestore index needed)
+          items.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+
+          return items;
+        });
+  }
   static Future<String> create(Item item) async {
-    final ref = await _col.add(item.toMap());
+    final data = item.toMap();
+
+    data['createdAt'] = FieldValue.serverTimestamp();
+
+    final ref = await _col.add(data);
     return ref.id;
   }
 
