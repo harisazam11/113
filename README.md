@@ -1,17 +1,36 @@
-# BUITEMS Lost & Found (Flutter + Firebase)
+# BUITEMS Lost & Found 
 
-A mobile app for BUITEMS students to report and find lost items.
+A Flutter and Firebase-based mobile application that helps BUITEMS students report, discover, and recover lost items on campus.
+Students can create lost or found item posts, upload images, search listings, filter by category, and contact item owners directly through the app.
 
 ## Features
-- Email/password, Google, and Phone (OTP) sign-in
-- Restricted to `@buitems.edu.pk` accounts for email signup
-- Post lost/found items with photo (Firebase Storage)
-- Browse with search + category + type filters
-- Item details with Call / WhatsApp / Email contact actions
-- My Posts: edit, delete, change status (active / returned / closed)
+
+### Authentication
+- Email signup and login
+- Restricted to @buitems.edu.pk accounts
+
+### Lost & Found Management
+- Create lost item posts
+- Create found item posts
+- Upload item images
+- Track item status
+
+### Search & Discovery
+- Search by item title
+- Filter by category
+- Filter by lost/found type
+
+### Communication
+- Call item owner
+- WhatsApp contact
+- Email contact
+
+### User Management
+- My Posts dashboard
+- Edit and delete posts
 - Profile screen
 
-## 📱 Screen Preview
+## Screen Preview
 
 |                                                    |                                                    |                                                    |
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
@@ -125,3 +144,49 @@ service firebase.storage {
 flutter pub get
 flutter run
 ```
+
+---
+
+## Video Demo
+
+If available, you can watch the full app demo here:
+
+👉 [Watch Demo Video](#)
+
+---
+## APK Download
+
+Download and install the latest Android APK release.
+
+<p align="center">
+  <a href="https://github.com/nazinda/BUITEMS_lost_found_app/releases/download/v1.0.0/app-release.apk">
+    <img src="https://img.shields.io/badge/Download-Latest_APK-success?style=for-the-badge" />
+  </a>
+</p>
+
+> Note: You may need to enable "Install from Unknown Sources" on your Android device.
+
+---
+
+## Future Improvements
+
+* Push notifications for newly reported lost or found items
+* AI-powered matching between lost and found listings
+* QR code verification for secure item claiming
+* In-app chat between item owners and finders
+* Department-wise and location-based filtering
+* Dark mode support
+* Multi-language support (including Urdu)
+* Campus map integration for reporting item locations
+* Admin dashboard for moderation and duplicate post management
+* Enhanced search with smart recommendations
+
+---
+
+## Team Members
+
+* Nazinda
+* Zunaira Sabir
+* Aazain Jan
+
+---
