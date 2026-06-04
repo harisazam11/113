@@ -95,7 +95,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
       final id = await AuthService.sendPhoneCode(_phone.text.trim());
       setState(() => _verificationId = id);
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(e.toString()),
@@ -105,6 +105,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                 borderRadius: BorderRadius.circular(10)),
           ),
         );
+      }
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -117,7 +118,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
           _verificationId!, _code.text.trim());
       if (mounted) Navigator.pop(context);
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(e.toString()),
@@ -127,6 +128,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                 borderRadius: BorderRadius.circular(10)),
           ),
         );
+      }
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -176,7 +178,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                         width: 72,
                         height: 72,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.15),
+                          color: Colors.white.withValues(alpha: 0.15),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Icon(Icons.phone_android_rounded,
@@ -199,7 +201,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.white.withOpacity(0.65),
+                          color: Colors.white.withValues(alpha: 0.65),
                         ),
                       ),
                       const SizedBox(height: 36),
@@ -211,7 +213,7 @@ class _PhoneLoginScreenState extends State<PhoneLoginScreen> {
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
+                              color: Colors.black.withValues(alpha: 0.2),
                               blurRadius: 30,
                               offset: const Offset(0, 10),
                             ),

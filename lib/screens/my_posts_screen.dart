@@ -68,14 +68,14 @@ class MyPostsScreen extends StatelessWidget {
           final items = snap.data ?? [];
 
           if (items.isEmpty) {
-            return Center(
+            return const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.post_add_rounded,
                       size: 64, color: Colors.grey),
-                  const SizedBox(height: 12),
-                  const Text(
+                  SizedBox(height: 12),
+                  Text(
                     'You have no posts yet',
                     style: TextStyle(
                       color: Color(0xFF94A3B8),

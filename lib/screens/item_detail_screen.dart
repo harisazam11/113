@@ -138,10 +138,11 @@ class ItemDetailScreen extends StatelessWidget {
       body: FutureBuilder<Item>(
         future: ItemService.fetch(itemId),
         builder: (context, snap) {
-          if (!snap.hasData)
+          if (!snap.hasData) {
             return const Scaffold(
               body: Center(child: CircularProgressIndicator()),
             );
+          }
           final item = snap.data!;
           final isOwner = item.posterId == uid;
           final isLost = item.type == ItemType.lost;
@@ -283,7 +284,7 @@ class ItemDetailScreen extends StatelessWidget {
                           CircleAvatar(
                             radius: 22,
                             backgroundColor:
-                                const Color(0xFF1A3A6E).withOpacity(0.1),
+                                const Color(0xFF1A3A6E).withValues(alpha: 0.1),
                             child: const Icon(Icons.person_rounded,
                                 color: Color(0xFF1A3A6E), size: 22),
                           ),
@@ -413,8 +414,9 @@ class ItemDetailScreen extends StatelessWidget {
                                                 await ItemService.update(
                                                     item.id,
                                                     {'status': s.name});
-                                                if (context.mounted)
+                                                if (context.mounted) {
                                                   Navigator.pop(context);
+                                                }
                                               },
                                             ))
                                         .toList()),
@@ -464,8 +466,9 @@ class ItemDetailScreen extends StatelessWidget {
                               ),
                               onPressed: () async {
                                 await ItemService.delete(item.id);
-                                if (context.mounted)
+                                if (context.mounted) {
                                   Navigator.pop(context);
+                                }
                               },
                             ),
                           ),
@@ -556,7 +559,7 @@ class _ContactBtn extends StatelessWidget {
         decoration: BoxDecoration(
           color: bg,
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Row(mainAxisSize: MainAxisSize.min, children: [
           Icon(icon, color: color, size: 18),

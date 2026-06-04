@@ -126,7 +126,7 @@ class _SignupScreenState extends State<SignupScreen> {
       );
       if (mounted) Navigator.pop(context);
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(e.toString()),
@@ -136,6 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 borderRadius: BorderRadius.circular(10)),
           ),
         );
+      }
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -216,7 +217,7 @@ class _SignupScreenState extends State<SignupScreen> {
           'BUITEMS students only',
           style: TextStyle(
             fontSize: 14,
-            color: Colors.white.withOpacity(0.65),
+            color: Colors.white.withValues(alpha: 0.65),
           ),
         ),
       ],
@@ -230,7 +231,7 @@ class _SignupScreenState extends State<SignupScreen> {
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withValues(alpha: 0.2),
             blurRadius: 30,
             offset: const Offset(0, 10),
           ),
@@ -261,7 +262,7 @@ class _SignupScreenState extends State<SignupScreen> {
           const SizedBox(height: 14),
           // Department dropdown
           DropdownButtonFormField<String>(
-            value: _department,
+            initialValue: _department,
             decoration: const InputDecoration(
               labelText: 'Department',
               prefixIcon: Icon(Icons.account_balance_outlined, size: 20),
@@ -285,7 +286,7 @@ class _SignupScreenState extends State<SignupScreen> {
           const SizedBox(height: 14),
           // Semester dropdown
           DropdownButtonFormField<String>(
-            value: _semester,
+            initialValue: _semester,
             decoration: const InputDecoration(
               labelText: 'Semester',
               prefixIcon: Icon(Icons.school_outlined, size: 20),

@@ -243,7 +243,7 @@ class _PostItemScreenState extends State<PostItemScreen> {
       }
       if (mounted) Navigator.pop(context);
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(e.toString()),
@@ -253,6 +253,7 @@ class _PostItemScreenState extends State<PostItemScreen> {
                 borderRadius: BorderRadius.circular(10)),
           ),
         );
+      }
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -306,7 +307,7 @@ class _PostItemScreenState extends State<PostItemScreen> {
           ),
           const SizedBox(height: 16),
 
-          _SectionLabel('Item details'),
+          const _SectionLabel('Item details'),
           const SizedBox(height: 8),
           _FormCard(children: [
             TextField(
@@ -327,7 +328,7 @@ class _PostItemScreenState extends State<PostItemScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<String>(
-              value: _category,
+              initialValue: _category,
               decoration: const InputDecoration(
                   labelText: 'Category',
                   prefixIcon:
@@ -341,7 +342,7 @@ class _PostItemScreenState extends State<PostItemScreen> {
           ]),
           const SizedBox(height: 16),
 
-          _SectionLabel('Location & contact'),
+          const _SectionLabel('Location & contact'),
           const SizedBox(height: 8),
           _FormCard(children: [
             TextField(
@@ -363,7 +364,7 @@ class _PostItemScreenState extends State<PostItemScreen> {
           ]),
           const SizedBox(height: 16),
 
-          _SectionLabel('Photo'),
+          const _SectionLabel('Photo'),
           const SizedBox(height: 8),
           Row(children: [
             Expanded(

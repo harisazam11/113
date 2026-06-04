@@ -113,12 +113,12 @@ class _BrowseScreenState extends State<BrowseScreen> {
                   decoration: InputDecoration(
                     hintText: 'Search items...',
                     hintStyle: TextStyle(
-                        color: Colors.white.withOpacity(0.5),
+                        color: Colors.white.withValues(alpha: 0.5),
                         fontSize: 14),
                     prefixIcon: Icon(Icons.search,
-                        color: Colors.white.withOpacity(0.7)),
+                        color: Colors.white.withValues(alpha: 0.7)),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.12),
+                    fillColor: Colors.white.withValues(alpha: 0.12),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -130,7 +130,7 @@ class _BrowseScreenState extends State<BrowseScreen> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(
-                          color: Colors.white.withOpacity(0.4)),
+                          color: Colors.white.withValues(alpha: 0.4)),
                     ),
                     contentPadding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 12),

@@ -66,7 +66,7 @@ class ProfileScreen extends StatelessWidget {
                     const SizedBox(height: 32),
                     CircleAvatar(
                       radius: 40,
-                      backgroundColor: Colors.white.withOpacity(0.2),
+                      backgroundColor: Colors.white.withValues(alpha: 0.2),
                       backgroundImage: user.photoURL != null
                           ? NetworkImage(user.photoURL!)
                           : null,
@@ -88,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
                     Text(
                       user.email ?? user.phoneNumber ?? '',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.7),
+                        color: Colors.white.withValues(alpha: 0.7),
                         fontSize: 13,
                       ),
                     ),
@@ -139,11 +139,11 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  _InfoCard(children: [
+                  const _InfoCard(children: [
                     _ActionRow(
                       icon: Icons.logout_rounded,
                       label: 'Sign out',
-                      color: const Color(0xFFEF4444),
+                      color: Color(0xFFEF4444),
                       onTap: AuthService.signOut,
                     ),
                   ]),
@@ -234,7 +234,7 @@ class _ActionRow extends StatelessWidget {
                   TextStyle(color: color, fontWeight: FontWeight.w500)),
           const Spacer(),
           Icon(Icons.chevron_right_rounded,
-              color: color.withOpacity(0.5), size: 18),
+              color: color.withValues(alpha: 0.5), size: 18),
         ]),
       ),
     );
