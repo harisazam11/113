@@ -147,9 +147,13 @@ flutter run
 
 ---
 
-## Video Demo
+## Figma Prototype
 
-If available, you can watch the full app demo here:
+👉 [Figma prototype](https://www.figma.com/design/6OVpZ1lthopQdJ6MCdhwHk/buitems-lost-found-app-prototype?node-id=0-1&p=f&t=CSbQ8Fp7VRx4UWqY-0)
+
+---
+
+## Video Demo
 
 👉 [Watch Demo Video](https://youtube.com/shorts/IOxEr7U7dHo?feature=share)
 
